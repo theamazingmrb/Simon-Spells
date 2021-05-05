@@ -1,0 +1,24 @@
+body {
+
+}
+
+/* instuctions modal css here */
+
+.keyboard {
+   display: grid;
+   grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+   width: 200px;
+   height: 200px;
+}
+
+.key {
+    width: 100px;
+    height: 100px;
+    color: solid lightblue;
+    font-family:Helvetica, sans-serif;
+    font-size: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
