@@ -9,23 +9,24 @@
 </head>
 <body>
     <h1>Simon Spells</h1>
-    <!-- Level 1 will go HERE, but how to make number change with each level - review dots lab -->
-    <div class="instructions-btn">how to play</div>
+    <div id="level">Level</div>
+    <div id="instructions-btn" class="buttons">how to play</div>
     <div id="instructions-modal">
         <div id="modal-textbox">
             <h1>Learn how to play Simon Spells</h1>
             <p>Watch the computer play a sequence of letters and copy it after! The level number will correlate to the amount of letters in the sequence. Have fun!</p>
             <div id="instructions-footer">
-                <div id="close-intructions" href="#">Close</div>
+                <div id="close-btn" class="buttons" href="#">Close</div>
+                <!-- change class on this button eventually -->
             </div>
         </div>
     </div>
-    <div class="restart">restart game</div>
+    <div id="restart" class="buttons">restart game</div>
     <div class="keyboard">
-        <div class="key" id="a">A</div>
-        <div class="key" id="b">B</div>
-        <div class="key" id="c">C</div>
-        <div class="key" id="d">D</div>
+        <div class= "key" id="a">A</div>
+        <div class= "key" id="b">B</div>
+        <div class= "key" id="c">C</div>
+        <div class= "key" id="d">D</div>
     </div>
     <script src="script.js"></script>
 </body>
