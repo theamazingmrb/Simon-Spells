@@ -20,41 +20,82 @@
     howToPlayBtn.addEventListener('click', openHowTo)
     closeBtn.addEventListener('click', closeHowTo)
 
+
+//--- start button --->
+//-----7) As the user, I want to have a start/restart button so that I can restart the game whenever I want -------------//
+    // let gameOn = document.querySelector('#start-btn')
+    // let game = false
+    // let levelWon = false
+    // gameOn.addEventListener('click', (event) => {
+    //     //when start button is clicked it needs to start game or when player has won level
+    //    if(game == true || levelWon == true) {
+    //        simonGoes();
+    //     }
+    // });
+
 //-----3) MVP during computer sequence, have buttons light up with color white to show which buttons were played -------------//
     //create a way to select all .key, change its color for a set amount of time then change it back to orginal color
 
         let simonSequence =  ["a","b","c","d"];
         let playerSequence = [];
         let playersTurn = false;
-       
-    //player presses start key
+        let i = 0
+
         let level = 0
 
+        let simonGoes = (i) => {
+            playersTurn = false;
+            setTimeout (() => {
+                let lightUpKey = document.querySelector(`#${simonSequence[i]}`)
+                lightUpKey.style.opacity = 0.5
+                setTimeout(() => {
+                    lightUpKey.style.opacity = 1
+                }, 800 * i)
+            }, 800)
+            playersTurn = true
+        }
 
-        //turn computerSequence[0] to white and then back to blue for a set time
-for (let i=0; i < simonSequence.length; i++) {
-    let simonGoes = () => {
-        playersTurn = false;
-        setTimeout (() => {
-            const lightUpKey = document.querySelector(`#${simonSequence[i]}`)
-            lightUpKey.style.opacity = 0.5
-            setTimeout(() => {
-                lightUpKey.style.opacity = 1
-            }, 800 * i)
-        }, 800 * i)
+    let playerGoes = () => {
+            let playerMove = document.querySelector(`#${simonSequence[i]}`)
+            playerMove.addEventListener ('click', (event) => {
+            playerMove.style.opacity = 0.5
+            console.log('player is clicking');
+            playersTurn=false;
+            })
     }
-    if (i == simonSequence.length) {
-        i=0;
-        playersTurn=true
+    
+    let levelUp = () => {
+        //playerSequence has to match simonSequence
+    }
+
+for (let i=0; i < simonSequence.length; i++) {
+    if (playersTurn == true) {
+        console.log('player goes')
         playerGoes()
-    } else if (i < simonSequence.length) {
-        simonGoes();
+        //compares players answer to simons
+    } else {
+        simonGoes(i);
+        //simonGoes needs to track simon movement, right now only doing one move at a time
     }
 }
 
-    let playerGoes = () => {
-       
-    }
+    //turn computerSequence[0] to white and then back to blue for a set time
+     
+
+        //need to write playerGoes function which will add event listener for when player click a key
+
+
+//
+
+
+
+//---- 6) As the user, I want to know what level I'm on so I know how many letters are in each sequence ---//
+
+
+
+
+
+
 
 
 
@@ -118,4 +159,3 @@ for (let i=0; i < simonSequence.length; i++) {
         //         console.log(i)}, 500 * i)}
     
         // // aKeyLit.addEventListener('click', computerPlays(event))
-   
