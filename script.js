@@ -36,68 +36,124 @@
 //-----3) MVP during computer sequence, have buttons light up with color white to show which buttons were played -------------//
     //create a way to select all .key, change its color for a set amount of time then change it back to orginal color
 
-        let simonSequence =  ["a","b","c","d"];
-        let playerSequence = [];
-        let playersTurn = false;
-        let i = 0
+// let simonSequence =  ["a","b","c","d"];
+// let answerSequence = []
+// let playerSequence = [];
+// let playersTurn = false;
+let i = 0
+// let level = 0
 
-        let level = 0
-
-        let simonGoes = (i) => {
-            playersTurn = false;
-            setTimeout (() => {
-                let lightUpKey = document.querySelector(`#${simonSequence[i]}`)
-                lightUpKey.style.opacity = 0.5
-                setTimeout(() => {
-                    lightUpKey.style.opacity = 1
-                }, 800 * i)
-            }, 800)
-            playersTurn = true
-        }
-
-    let playerGoes = () => {
-            let playerMove = document.querySelector(`#${simonSequence[i]}`)
-            playerMove.addEventListener ('click', (event) => {
-            playerMove.style.opacity = 0.5
-            console.log('player is clicking');
-            playersTurn=false;
-            })
-    }
-    
-    let levelUp = () => {
-        //playerSequence has to match simonSequence
-    }
-
-for (let i=0; i < simonSequence.length; i++) {
-    if (playersTurn == true) {
-        console.log('player goes')
-        playerGoes()
-        //compares players answer to simons
-    } else {
-        simonGoes(i);
-        //simonGoes needs to track simon movement, right now only doing one move at a time
-    }
+let game = {
+    simonSequence:  ['a', 'b', 'c', 'd'],
+    //clone simonSequence? 
+    answerSequence: [],
+    playerSequence: [],
+    playersTurn: false,
+    // let i = 0
+    level: 1,
 }
 
-    //turn computerSequence[0] to white and then back to blue for a set time
-     
+    let simonGoes = () => {
+        game.playersTurn = false;
+        setTimeout (() => {
+        let lightUpKey = document.querySelector(`#${game.simonSequence[i]}`)
+        lightUpKey.style.opacity = 0.5
+            setTimeout(() => {
+                lightUpKey.style.opacity = 1
+            }, 500)
+        },1000 * i)
+        console.log('simon went');
+        //push simons answers into answerSequence array 
+        game.answerSequence.push(game.simonSequence.splice(0,i))
+        console.log(game.answerSequence);
+        console.log(game.answerSequence.length);
+        game.playersTurn = true
+        console.log(game.playersTurn);
+    }
 
-        //need to write playerGoes function which will add event listener for when player click a key
+    let playerGoes = () => {
+        let playerMove = document.querySelector(`#${game.simonSequence[i]}`)
+        console.log(`${playerMove} this is players move`);
+        playerMove.addEventListener('click', () => {
+            playerMove.style.opacity = 0.5
+            setTimeout(() => {
+                playerMove.style.opacity = 1
+            }, 500)
+            console.log('player is clicking');
+            game.playersTurn=false;
+        })
+        console.log('player went')
+    }
+   
+    //compares players answer to correct answer
+    let playerAnswer = () => { 
+        let pushAnswer = document.querySelector(`#${game.simonSequence[i]}`).textContent
+        game.playerSequence.push(pushAnswer)
+        console.log('this event is going through');
+        console.log(game.playerSequence);
+    }
+
+    let levelUp = levelUp => {
+        //playerSequence has to match simonSequence for player to levelup
+        const playerAnswer = game.answerSequence.shift();
+        if (playerAnswer === levelUp) {
+            if (game.answerSequence.length === 0) {
+                game.level++ ;
+                console.log(`player leveled up ${game.level}`);
+                game.answerSequence.length = 0
+                return true
+            } else {
+            console.log('sorry try again!');
+            return false
+            }
+        }
+    }
+    
+
+for (let i=0; i < game.simonSequence.length; i++) {
+    if (game.playersTurn == true) {
+        playerGoes()
+        playerAnswer();
+        levelUp();
+    } else {
+        //simonGoes needs to track simon movement, right now only doing one move at a time
+        //forEach goes here?
+        simonGoes(i + 1);
+        // simonGoes(i+1)
+    }
+    
+}
 
 
-//
+// //trying something new
+// let aKey = document.querySelector('#a')
+// let bKey = document.querySelector('#b')
+// let cKey = document.querySelector('#c')
+// let dKey = document.querySelector('#d')
+
+// let simonGoes = () => {
+//     game.playersTurn = false;
+//     setTimeout (() => {
+//     let lightUpKey = [aKey, bKey, cKey, dKey]
+//     lightUpKey.style.opacity = 0.5
+//         setTimeout(() => {
+//             lightUpKey.style.opacity = 1
+//         }, 500)
+//     },1000 * i)
+//     console.log('simon went');
+//     //push simons answers into answerSequence array 
+//     game.answerSequence.push(game.simonSequence.splice(0,i))
+//     console.log(game.answerSequence);
+//     console.log(game.answerSequence.length);
+//     game.playersTurn = true
+//     console.log(game.playersTurn);
+// }
+
+
 
 
 
 //---- 6) As the user, I want to know what level I'm on so I know how many letters are in each sequence ---//
-
-
-
-
-
-
-
-
 
 
     //player clicks on key A, A turns white and back to original color

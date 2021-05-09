@@ -8,30 +8,30 @@
     <title>Simon-Spells</title>
 </head>
 <body>
-    <h1>Simon Spells</h1>
-    <div id="level">Level</div>
-    <div id="instructions-btn" class="buttons">how to play</div>
+    <h1>SIMON SPELLS</h1>
+    <div class="level-display">
+        <div id="level-word">LEVEL</div>
+        <div id="level-number"></div>
+    </div>
+    <button id="instructions-btn" class="buttons">how to play</button>
     <div id="instructions-modal">
         <div id="modal-textbox">
             <h1>Learn how to play Simon Spells</h1>
             <p>Watch the computer play a sequence of letters and copy it after! The level number will correlate to the amount of letters in the sequence. Have fun!</p>
             <div id="instructions-footer">
-                <div id="close-btn" class="buttons" href="#">Close</div>
+                <button id="close-btn" class="buttons" href="#">Close</button>
                 <!-- change class on this button eventually -->
             </div>
         </div>
     </div>
-    <div id="start-btn" class="buttons">restart/start</div>
+    <button id="start-btn" class="buttons">restart/start</button>
     <div class="keyboard">
         <div class= "key" id="a">A</div>
         <div class= "key" id="b">B</div>
         <div class= "key" id="c">C</div>
         <div class= "key" id="d">D</div>
     </div>
-    <div class="level-display">
-        <div id="level-word">level</div>
-        <div id="level-number"></div>
-    </div>
+
     
     <script src="script.js"></script>
 </body>
