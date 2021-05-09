@@ -1,5 +1,15 @@
 body {
-
+    background-color: #f2daad;
+    color:#3B3B3B;
+}
+h1{
+    color: #3B3B3B;
+    font-size: 4rem;
+    letter-spacing: 6px;
+    line-height: 68px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 50px;
 }
 
 /* instuctions modal css here */
@@ -11,17 +21,31 @@ body {
     height: 100%;
     width: 100%;
     z-index: 1;
-    /*This puts our modal in front of the body (which has a default z-index setting of `0`*/
-    overflow: auto;
-    /*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
     display: none;
-    /*Set this to `none` so that the modal does not show initially on page load.*/
 }
 
-.buttons { 
-    border: 2px solid black;
-    width: 100px;
+.front-buttons { 
+    height: 85px;
+    width: 125px;
+    border-radius: 10px;
+    background-color: #7FD962;
+    display:inline-block;
+    margin: 30px;
+    text-align: center;
+    font-size: 1rem;
 }
+#instructions-btn{
+    background-color: #B591FA;
+}
+#start-btn {
+    background-color: #7FD962;
+    float: right;
+}
+#close-btn{
+    height:50px;
+    width:100px;
+}
+  
 
 #modal-textbox {
 	background-color: white;
@@ -30,39 +54,79 @@ body {
 	border-radius: 2px;
     margin: 150px auto;
 	/*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally).*/
-	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
 	/*This will give the box some depth.*/
     padding: 2%;
     line-height: 120%;
 }
 
+.bottom-keyboard {
+    box-sizing: border-box;
+    height: 410px;
+    width: 1274px;
+    border: 1px solid #979797;
+    background-color: #3B3B3B;
+  }
+
 .keyboard {
-   display: grid;
-   grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-   width: 200px;
-   height: 200px;
+    margin: 20px auto;
+    width:400px;
+    height:400px;
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-row: auto auto;
 }
 
 .key {
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
     font-family:Helvetica, sans-serif;
     font-size: 52px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding:20px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 #a {
-    background-color: blue;
+    border-radius: 10px;
+    background-color: #F49AC1;
 }
 
 #b {
-    background-color: red;
+    border-radius: 10px;
+    background-color: #F79533;
 }
 #c {
-    background-color: green;
+    border-radius: 10px;
+    background-color: #6CCFF6;
 }
 #d {
-    background-color: yellow;
+    border-radius: 10px;
+    background-color: #FFF317;
+}
+
+.level-display {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+
+#level-number {
+    width: 70px;
+    height: 55px;
+    border: 5px solid #3B3B3B;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 3rem;
+    text-align: center;
+    background-color: white;
+}
+
+#level-word {
+    color: #3B3B3B;
+    font-size: 2rem;
 }

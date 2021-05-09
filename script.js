@@ -57,7 +57,7 @@ let game = {
         game.playersTurn = false;
         setTimeout (() => {
         let lightUpKey = document.querySelector(`#${game.simonSequence[i]}`)
-        lightUpKey.style.opacity = 0.5
+        lightUpKey.style.opacity = 0.25
             setTimeout(() => {
                 lightUpKey.style.opacity = 1
             }, 500)
@@ -75,7 +75,7 @@ let game = {
         let playerMove = document.querySelector(`#${game.simonSequence[i]}`)
         console.log(`${playerMove} this is players move`);
         playerMove.addEventListener('click', () => {
-            playerMove.style.opacity = 0.5
+            playerMove.style.opacity = 0.25
             setTimeout(() => {
                 playerMove.style.opacity = 1
             }, 500)

@@ -8,31 +8,35 @@
     <title>Simon-Spells</title>
 </head>
 <body>
-    <h1>SIMON SPELLS</h1>
-    <div class="level-display">
-        <div id="level-word">LEVEL</div>
-        <div id="level-number"></div>
-    </div>
-    <button id="instructions-btn" class="buttons">how to play</button>
+    <button id="instructions-btn" class="front-buttons">how to play</button>
     <div id="instructions-modal">
         <div id="modal-textbox">
-            <h1>Learn how to play Simon Spells</h1>
+            <h2>Learn how to play Simon Spells</h2>
             <p>Watch the computer play a sequence of letters and copy it after! The level number will correlate to the amount of letters in the sequence. Have fun!</p>
             <div id="instructions-footer">
-                <button id="close-btn" class="buttons" href="#">Close</button>
+                <button id="close-btn" class="modal-button" href="#">Close</button>
                 <!-- change class on this button eventually -->
             </div>
         </div>
     </div>
-    <button id="start-btn" class="buttons">restart/start</button>
+    <button id="start-btn" class="front-buttons">restart/start</button>
+
+    <h1>Simon Spells</h1>
+
+    <div class="level-display">
+        <div id="level-number"></div>
+        <div id="level-word">level</div>
+    </div>   
+
+   
     <div class="keyboard">
-        <div class= "key" id="a">A</div>
-        <div class= "key" id="b">B</div>
+            <div class= "key" id="a">A</div>
+            <div class= "key" id="b">B</div>
         <div class= "key" id="c">C</div>
         <div class= "key" id="d">D</div>
     </div>
 
-    
+
     <script src="script.js"></script>
 </body>
 </html>
