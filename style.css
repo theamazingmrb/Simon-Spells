@@ -41,6 +41,10 @@ h1{
     background-color: #7FD962;
     float: right;
 }
+#reset-btn {
+    background-color: #D86262;
+    float: right;
+}
 #close-btn{
     height:50px;
     width:100px;
