@@ -21,26 +21,18 @@
     closeBtn.addEventListener('click', closeHowTo)
 
 //********** GAME ****************/
-// let newGame = document.querySelector('#start-btn')
 let startGame = document.querySelector('#start-btn')
 let resetGame = document.querySelector('#reset-btn')
 let levelTracker = document.querySelector('#level-number')
-let alphabet = ['a','b','c','d']
+levelTracker.innerText = ("--")
+let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 let simonSequence = []
 let playerSequence= []
 let level = 1;
 let levelWon;
 let playerTurn = false;
-// let gameWon = false;
-// let canPlay = false;
-// let aKey = document.querySelector('#a')
-// let bKey = document.querySelector('#b')
-// let cKey = document.querySelector('#c')
-// let dKey = document.querySelector('#d')
 let allKeys = document.querySelectorAll('.key')
-levelTracker.innerText = ("--")
-// let i=0;
-// let e;
+
 
 startGame.addEventListener("click", playGame)
 resetGame.addEventListener("click", reset)
@@ -50,7 +42,6 @@ function playGame(e = null) {
     if (e) {
         e.preventDefault();
     }
-        // if(levelWon == true || gameOn == true) {
             //show what level player is on
             levelTracker.innerText = `${level}`;
             //determine who's turn it is, and allow that person to go
@@ -72,14 +63,16 @@ function simonGoes() {
     console.log('simon will go now');
     playerTurn = false;
     simonSequence = alphabet.slice(0,level)
+    
     //light up key by taking simonSequence.length and light up each the key that i pertains to. i.e. when i = 0, light up A && when i=1, light up B
 setTimeout(() => {
     for (let i=0; i < simonSequence.length; i++) {
         setTimeout(() => {
-            console.log('light up a key');
-            allKeys[i].style.opacity = 0.25
+            //selects key according to alphabet order since out of order in HTML
+            let specificKey = document.querySelector(`#${alphabet[i]}`)
+            specificKey.style.opacity = 0.25
             setTimeout(() => {
-                allKeys[i].style.opacity = 1
+                specificKey.style.opacity = 1
             }, 1000)
         }, 500 * i) 
     }
@@ -91,7 +84,7 @@ setTimeout(() => {
 
 //playerGoes function listens to event of keys clicked, lights up keys clicked by toggling opacity, and pushes id of clicked keys into an array called playerSequence
 function playerGoes() {
-    for(let i=0; i < 4; i++) {
+    for(let i=0; i < 26; i++) {
     allKeys[i].addEventListener("click", (e) => {
         e.preventDefault();
         setTimeout(() => {
@@ -123,10 +116,6 @@ function playerGoes() {
     })
     }
 }
-//if (level == 1) {}
-//if (level == 2) {}
-//if (level == 3) {}
-//if (level == 4) {}
 
 //can i create an event listener to the keys that says if the amount of times keys clicked = level && playerSeq string = simonSeq string then level up?
 
@@ -168,10 +157,4 @@ function reset(e) {
 
 // }
 //********************************************* */
-
-// e.preventDefault();
-// console.log('player is clicking');
-//if event target class = key - then light up and add id to playerSequence array
-
-//could span displaying whose turn it is(i.e. "Simons Turn" and "Your turn"), be the event that causes the playGame() to repeat?
 
