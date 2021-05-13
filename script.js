@@ -25,6 +25,7 @@ let startGame = document.querySelector('#start-btn')
 let resetGame = document.querySelector('#reset-btn')
 let levelTracker = document.querySelector('#level-number')
 levelTracker.innerText = ("--")
+let whosTurn = document.querySelector('.whos-turn')
 let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 let simonSequence = []
 let playerSequence= []
@@ -32,7 +33,6 @@ let level = 1;
 let levelWon;
 let playerTurn = false;
 let allKeys = document.querySelectorAll('.key')
-
 
 startGame.addEventListener("click", playGame)
 resetGame.addEventListener("click", reset)
@@ -46,21 +46,20 @@ function playGame(e = null) {
             levelTracker.innerText = `${level}`;
             //determine who's turn it is, and allow that person to go
             if (playerTurn == false) {   
-                console.log("it's simon's turn");
+                whosTurn.innerHTML = (`Simon's Turn!`)
                 simonGoes();
                 // playerTurn = true;
             } 
             if (playerTurn == true) {
-                console.log("it's players turn");
+            whosTurn.innerHTML = (`Your Turn!`)
                 // playerGoes();
-                //playerTurn= = false;
             }
     // }
 }
 
 //simonGoes function copys part of alphabet array to simonSequence array. i.e for level 4 it will copy alphabet array from [0] to [3]
 function simonGoes() {
-    console.log('simon will go now');
+
     playerTurn = false;
     simonSequence = alphabet.slice(0,level)
     
@@ -77,7 +76,6 @@ setTimeout(() => {
         }, 500 * i) 
     }
 }, 1000)
-    
     playerTurn = true
     console.log(simonSequence);
 }
@@ -135,6 +133,7 @@ function levelUp(){
     level += 1
     simonSequence = [];
     playerSequence = [];
+    whosTurn.innerHTML = (`Simon's Turn!`)
     playerTurn = false;
 }
 
@@ -143,6 +142,7 @@ function reset(e) {
     e.preventDefault();
     level = 1;
     levelTracker.innerText = ("--")
+    whosTurn.innerHTML = ("")
     playerTurn = false;
     simonSequence = []
     playerSequence = []

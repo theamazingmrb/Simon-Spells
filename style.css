@@ -1,18 +1,28 @@
 body {
-    background-color: #f2daad;
+    background-color: #E7CDB6;
     color:#3B3B3B;
 }
 h1{
     color: #3B3B3B;
-    font-size: 4rem;
+    font-size: 5rem;
     letter-spacing: 6px;
-    line-height: 68px;
     text-align: center;
     text-transform: uppercase;
-    margin: 50px;
+    margin: 10px;
 }
 
 /* instuctions modal css here */
+#instructions-btn{
+    background-color: #B591FA;
+    height: 75px;
+    width: 200px;
+    border-radius: 10px;
+    display:inline-block;
+    margin: 30px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
 #instructions-modal {
     background-color: rgba(0,0,0,0.4);
     position: fixed;
@@ -23,51 +33,112 @@ h1{
     z-index: 1;
     display: none;
 }
-
-.front-buttons { 
-    height: 85px;
-    width: 125px;
-    border-radius: 10px;
-    background-color: #7FD962;
-    display:inline-block;
-    margin: 30px;
+h2{
+    color: #3B3B3B;
+    font-size: 2rem;
     text-align: center;
-    font-size: 1rem;
-}
-#instructions-btn{
-    background-color: #B591FA;
-}
-#start-btn {
-    background-color: #7FD962;
-    float: right;
-}
-#reset-btn {
-    background-color: #D86262;
-    float: right;
+    margin: 5px;
 }
 #close-btn{
     height:50px;
-    width:100px;
+    width:75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #D86262;
+    font-family: Arial, sans-serif;
 }
   
-
 #modal-textbox {
 	background-color: white;
-	height: 350px;
-	width: 550px;
-	border-radius: 2px;
+	height: 400px;
+	width: 600px;
+	border-radius: 10px;
     margin: 150px auto;
-	/*This will set the margins for the top and the bottom to 150px (or larger). The right and left will automatically set themselves (and keep the box centered horizontally).*/
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
-	/*This will give the box some depth.*/
-    padding: 2%;
-    line-height: 120%;
+    padding: 5%;
+    line-height: 150%;
+    font-size: 1.25rem;
+    font-family: Arial, sans-serif;
+}
+
+.reset-start-btns {
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: auto;
+}
+
+.front-buttons { 
+    height: 60px;
+    width: 100px;
+    border-radius: 10px;
+    margin: 20px;
+    font-size: 1rem;
+}
+
+#start-btn {
+    background-color: #7FD962;
+    font-family: Arial, sans-serif;
+}
+#reset-btn {
+    background-color: #D86262;
+    font-family: Arial, sans-serif;
+}
+.top-display{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+.level-display {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 30px;
+}
+
+#level-number {
+    width: 100px;
+    height: 75px;
+    border: 5px solid #3B3B3B;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 4rem;
+    text-align: center;
+    background-color: white;
+}
+
+#level-word {
+    color: #3B3B3B;
+    font-size: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.whos-turn{
+    width: 50%;
+    height: 100px;
+    border: 5px solid #3B3B3B;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 3rem;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
 }
 
 .keyboard {
     color: white;
     display: flex;
     flex-direction: column;
+    margin: 60px auto;
 }
 .row1 {
     margin: 0 auto;
@@ -91,33 +162,137 @@ h1{
     font-family:Helvetica, sans-serif;
     font-size: 3rem;
     border-radius:10px;
-    display:flex;
+    display: flex;
     align-items:center;
     justify-content:center;
     background-color: black;
     margin: 0.2em;
 }
 
-.level-display {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px;
-}
 
-#level-number {
-    width: 70px;
-    height: 55px;
-    border: 5px solid #3B3B3B;
-    border-radius: 10px;
-    margin: 5px;
-    font-size: 3rem;
-    text-align: center;
-    background-color: white;
-}
 
-#level-word {
-    color: #3B3B3B;
-    font-size: 2rem;
-}
+/* /* @media (min-device-width: 540px)
+  and (max-device-width: 1000px) {
+    body {
+        background-color: #f2daad;
+        color:#3B3B3B;
+    }
+    h1{
+        color: #3B3B3B;
+        font-size: 4rem;
+        letter-spacing: 6px;
+        line-height: 68px;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 50px;
+    }
+    
+    /* instuctions modal css here */
+    /* #instructions-modal {
+        background-color: rgba(0,0,0,0.4);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        display: none;
+    }
+    
+    .front-buttons { 
+        height: 85px;
+        width: 125px;
+        border-radius: 10px;
+        background-color: #7FD962;
+        display:inline-block;
+        margin: 30px;
+        text-align: center;
+        font-size: 1rem;
+    }
+    #instructions-btn{
+        background-color: #B591FA;
+    }
+    #start-btn {
+        background-color: #7FD962;
+        float: right;
+    }
+    #reset-btn {
+        background-color: #D86262;
+        float: right;
+    }
+    #close-btn{
+        height:50px;
+        width:100px;
+    }
+      
+    
+    #modal-textbox {
+        background-color: white;
+        height: 350px;
+        width: 550px;
+        border-radius: 2px;
+        margin: 150px auto;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+        padding: 2%;
+        line-height: 120%;
+    }
+    
+    .keyboard {
+        color: white;
+        display: flex;
+        width: 100%
+        flex-direction: column;
+    }
+    .row1 {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+    .row2 {
+        margin: 0auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .row3{
+        margin: 0 auto;
+        display: flex;
+    }
+    
+    .key {
+        width: 5rem;
+        height: 5rem;
+        font-family:Helvetica, sans-serif;
+        font-size: 3rem;
+        border-radius:10px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background-color: black;
+        margin: 0.2em;
+    }
+    
+    .level-display {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px;
+    }
+    
+    #level-number {
+        width: 70px;
+        height: 55px;
+        border: 5px solid #3B3B3B;
+        border-radius: 10px;
+        margin: 5px;
+        font-size: 3rem;
+        text-align: center;
+        background-color: white;
+    }
+    
+    #level-word {
+        color: #3B3B3B;
+        font-size: 2rem;
+    }
+ } */

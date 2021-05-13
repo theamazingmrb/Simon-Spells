@@ -8,27 +8,34 @@
     <title>Simon-Spells</title>
 </head>
 <body>
-    <button id="instructions-btn" class="front-buttons">how to play</button>
+    <div class = "top-display">
+    <button id="instructions-btn">how to play</button>
+    <div class="level-display">
+        <div id="level-number"></div>
+        <div id="level-word">level</div>
+    </div> 
+    </div>
     <div id="instructions-modal">
         <div id="modal-textbox">
-            <h2>Learn how to play Simon Spells</h2>
-            <p>Watch the computer play a sequence of letters and copy it after! The level number will correlate to the amount of letters in the sequence. Have fun!</p>
+            <h2>How to play Simon Spells:</h2>
+            <p>Hi! My name is Simon and I'm a computer. During my turn, watch which letters I light up and try your best to remember the sequence! Once I'm done, you'll have to click the buttons in the same sequence I did! </br> </br> Here's a tip: the level number will always correlate to the amount of letters in the sequence. Have fun!</p>
             <div id="instructions-footer">
                 <button id="close-btn" class="modal-button" href="#">Close</button>
                 <!-- change class on this button eventually -->
             </div>
         </div>
     </div>
-    <button id="reset-btn" class="front-buttons">reset</button>
-    <button id="start-btn" class="front-buttons">start</button>
+
 
     <h1>Simon Spells</h1>
 
-    <div class="level-display">
-        <div id="level-number"></div>
-        <div id="level-word">level</div>
-    </div>   
+    <div class="reset-start-btns">
+        <button id="reset-btn" class="front-buttons">reset</button>
+        <button id="start-btn" class="front-buttons">start</button>
+    </div>
 
+   
+    <div class="whos-turn"></div>
    
     <div class="keyboard">
         <div class= "row1">
