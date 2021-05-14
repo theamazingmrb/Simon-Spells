@@ -10,17 +10,14 @@ Simon Spells puts a virtual, early-education twist on the game, Simon Says. Duri
 - JavaScript
 - CSS
 
-<hr>
 
 ## Idea Inspiration
 The inspiration for this game was my 3-year-old niece, who likes to sit next to me as I work and imitate a taping-typing motion on the table. Thus, my goal was to create a simple and fun game to help early education learners learn their ABCs while familiarizing them with a computer keyboard layout.
 
-<hr>
 
 ## Wireframe
 <img src="img/kacieKomoto_simonSpells_wireframe_project1.png">
 
-<hr>
 
 ## User Walkthrough
 - Player may click on the button "how to play" to access a modal explaining the game instructions.
@@ -31,7 +28,7 @@ The inspiration for this game was my 3-year-old niece, who likes to sit next to 
 - Once all levels are completed, player is congratulated and the game is reset.
 - Player at any time can click the RESET button to clear all inputs
 
-<hr>
+
 
 ## Major Hurdles & Bugs
 Major Hurdles
@@ -42,7 +39,6 @@ Major Hurdles
 Bugs
 1. When RESET is clicked it doesn't immediately stop Simon's Sequence
 2. Player is only informed when it's Simon's turn and not their turn
-<hr>
 
 ## Ideas for Future Modifications
 1. Improving UX/UI elements and Usability Testing
