@@ -4,13 +4,20 @@ body {
 }
 h1{
     color: #3B3B3B;
-    font-size: 5rem;
+    font-family: 'Comfortaa', cursive;
+    font-size: 4rem;
     letter-spacing: 6px;
     text-align: center;
     text-transform: uppercase;
     margin: 10px;
 }
-
+.screen {
+    border: 2rem solid #3B3B3B;
+    margin: 60px 150px 0px 150px;
+    padding: 3rem;
+    border-radius: 20px;
+    background-color: #FAFAFA;
+}
 /* instuctions modal css here */
 #instructions-btn{
     background-color: #B591FA;
@@ -18,7 +25,7 @@ h1{
     width: 200px;
     border-radius: 10px;
     display:inline-block;
-    margin: 30px;
+    margin: 5px;
     text-align: center;
     font-size: 1.5rem;
 }
@@ -70,6 +77,7 @@ h2{
     justify-content:center;
     align-items: center;
     margin: auto;
+
 }
 
 .front-buttons { 
@@ -83,10 +91,12 @@ h2{
 #start-btn {
     background-color: #7FD962;
     font-family: Arial, sans-serif;
+    text-transform: uppercase;
 }
 #reset-btn {
     background-color: #D86262;
     font-family: Arial, sans-serif;
+    text-transform: uppercase;
 }
 .top-display{
 display: flex;
@@ -98,7 +108,7 @@ justify-content: space-between;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    margin: 30px;
+    margin: 0px;
 }
 
 #level-number {
@@ -119,12 +129,12 @@ justify-content: space-between;
 }
 
 .whos-turn{
-    width: 50%;
+    width: 60%;
     height: 100px;
     border: 5px solid #3B3B3B;
     border-radius: 10px;
     margin: 5px;
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: white;
@@ -132,13 +142,17 @@ justify-content: space-between;
     justify-content: center;
     align-items: center;
     margin: 40px auto;
+    background-color: #FFFFFF;
 }
 
 .keyboard {
-    color: white;
+    color: #3B3B3B;
+    background-color: #3B3B3B;
     display: flex;
     flex-direction: column;
-    margin: 60px auto;
+    margin:  10px 150px 60px 150px;
+    padding: 3rem;
+    border-radius: 20px;
 }
 .row1 {
     margin: 0 auto;
@@ -169,130 +183,21 @@ justify-content: space-between;
     margin: 0.2em;
 }
 
+#q, #a, #z, #p {
+    background-color: #F79533;
+}
 
+#w, #s, #x, #o, #l {
+    background-color: #F49AC1;
+}
 
-/* /* @media (min-device-width: 540px)
-  and (max-device-width: 1000px) {
-    body {
-        background-color: #f2daad;
-        color:#3B3B3B;
-    }
-    h1{
-        color: #3B3B3B;
-        font-size: 4rem;
-        letter-spacing: 6px;
-        line-height: 68px;
-        text-align: center;
-        text-transform: uppercase;
-        margin: 50px;
-    }
-    
-    /* instuctions modal css here */
-    /* #instructions-modal {
-        background-color: rgba(0,0,0,0.4);
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        z-index: 1;
-        display: none;
-    }
-    
-    .front-buttons { 
-        height: 85px;
-        width: 125px;
-        border-radius: 10px;
-        background-color: #7FD962;
-        display:inline-block;
-        margin: 30px;
-        text-align: center;
-        font-size: 1rem;
-    }
-    #instructions-btn{
-        background-color: #B591FA;
-    }
-    #start-btn {
-        background-color: #7FD962;
-        float: right;
-    }
-    #reset-btn {
-        background-color: #D86262;
-        float: right;
-    }
-    #close-btn{
-        height:50px;
-        width:100px;
-    }
-      
-    
-    #modal-textbox {
-        background-color: white;
-        height: 350px;
-        width: 550px;
-        border-radius: 2px;
-        margin: 150px auto;
-        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
-        padding: 2%;
-        line-height: 120%;
-    }
-    
-    .keyboard {
-        color: white;
-        display: flex;
-        width: 100%
-        flex-direction: column;
-    }
-    .row1 {
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-    }
-    .row2 {
-        margin: 0auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .row3{
-        margin: 0 auto;
-        display: flex;
-    }
-    
-    .key {
-        width: 5rem;
-        height: 5rem;
-        font-family:Helvetica, sans-serif;
-        font-size: 3rem;
-        border-radius:10px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        background-color: black;
-        margin: 0.2em;
-    }
-    
-    .level-display {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 50px;
-    }
-    
-    #level-number {
-        width: 70px;
-        height: 55px;
-        border: 5px solid #3B3B3B;
-        border-radius: 10px;
-        margin: 5px;
-        font-size: 3rem;
-        text-align: center;
-        background-color: white;
-    }
-    
-    #level-word {
-        color: #3B3B3B;
-        font-size: 2rem;
-    }
- } */
+#e, #d, #c, #i, #k {
+    background-color: #FFF317;
+}
+
+#r, #f, #v, #u, #j, #m {
+    background-color:#6CCFF6;
+}
+#t, #g, #b, #y, #h, #n {
+    background-color: #5DE6A6;
+}

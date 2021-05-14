@@ -25,68 +25,67 @@ let startGame = document.querySelector('#start-btn')
 let resetGame = document.querySelector('#reset-btn')
 let levelTracker = document.querySelector('#level-number')
 levelTracker.innerText = ("--")
-let whosTurn = document.querySelector('.whos-turn')
+let info = document.querySelector('.whos-turn')
+info.innerHTML = (`Click START`)
 let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 let simonSequence = []
 let playerSequence= []
 let level = 1;
 let levelWon;
 let playerTurn = false;
+let on = true;
 let allKeys = document.querySelectorAll('.key')
 
-startGame.addEventListener("click", playGame)
-resetGame.addEventListener("click", reset)
-playerGoes()
+if (on == true) {
+    startGame.addEventListener("click", playGame)
+    resetGame.addEventListener("click", reset)
+    playerGoes()
+} else {
+    reset()
+}
+
 
 function playGame(e = null) {
     if (e) {
         e.preventDefault();
     }
-            //show what level player is on
-            levelTracker.innerText = `${level}`;
-            //determine who's turn it is, and allow that person to go
-            if (playerTurn == false) {   
-                whosTurn.innerHTML = (`Simon's Turn!`)
-                simonGoes();
-                // playerTurn = true;
-            } 
-            if (playerTurn == true) {
-            whosTurn.innerHTML = (`Your Turn!`)
-                // playerGoes();
-            }
-    // }
+    //show what level player is on
+    levelTracker.innerText = `${level}`;
+    //determine who's turn it is, and allow that person to go
+    if (playerTurn == false) { 
+        simonGoes();
+    }
 }
 
 //simonGoes function copys part of alphabet array to simonSequence array. i.e for level 4 it will copy alphabet array from [0] to [3]
 function simonGoes() {
-
     playerTurn = false;
     simonSequence = alphabet.slice(0,level)
-    
     //light up key by taking simonSequence.length and light up each the key that i pertains to. i.e. when i = 0, light up A && when i=1, light up B
-setTimeout(() => {
-    for (let i=0; i < simonSequence.length; i++) {
-        setTimeout(() => {
-            //selects key according to alphabet order since out of order in HTML
-            let specificKey = document.querySelector(`#${alphabet[i]}`)
-            specificKey.style.opacity = 0.25
+    setTimeout(() => {
+        for (let i=0; i < simonSequence.length; i++) {
+            info.innerHTML = (`Watch Simon!`)
             setTimeout(() => {
-                specificKey.style.opacity = 1
-            }, 1000)
-        }, 500 * i) 
+                //selects key according to alphabet order since out of order in HTML
+                let specificKey = document.querySelector(`#${alphabet[i]}`)
+                specificKey.style.opacity = 0.1
+                setTimeout(() => {
+                    specificKey.style.opacity = 1
+                    info.innerHTML = ('')
+                }, 800)
+            }, 800 * i) 
     }
 }, 1000)
-    playerTurn = true
-    console.log(simonSequence);
+console.log(simonSequence);
 }
 
 //playerGoes function listens to event of keys clicked, lights up keys clicked by toggling opacity, and pushes id of clicked keys into an array called playerSequence
 function playerGoes() {
     for(let i=0; i < 26; i++) {
-    allKeys[i].addEventListener("click", (e) => {
+        allKeys[i].addEventListener("click", (e) => {
         e.preventDefault();
         setTimeout(() => {
-            allKeys[i].style.opacity = 0.25
+            allKeys[i].style.opacity = 0.1
             setTimeout(() => {
                 allKeys[i].style.opacity = 1
             }, 500)
@@ -107,8 +106,9 @@ function playerGoes() {
                 levelUp();
                 console.log(playerSequence);
                 playGame();
+                gameWon();
             } else {
-                console.log('sorry, wrong answer! click the reset button to try again!');
+                info.innerHTML = (`Sorry! Click RESET to try again!`)
             }
         }        
     })
@@ -121,7 +121,7 @@ function playerGoes() {
 //checkAnswer function compares playerSequence to simonSequence. if matches up, player moves on to next level
 function checkAnswer(){
     if (playerSequence.toString() == simonSequence.toString()) {
-        console.log(`correct! you clicked ${simonSequence}`);
+        info.innerHTML = ('Correct!')
         return true
     } else {
         // console.log('sorry, wrong answer! to try again, click the reset button');
@@ -133,7 +133,6 @@ function levelUp(){
     level += 1
     simonSequence = [];
     playerSequence = [];
-    whosTurn.innerHTML = (`Simon's Turn!`)
     playerTurn = false;
 }
 
@@ -142,7 +141,7 @@ function reset(e) {
     e.preventDefault();
     level = 1;
     levelTracker.innerText = ("--")
-    whosTurn.innerHTML = ("")
+    info.innerHTML = ("Click START")
     playerTurn = false;
     simonSequence = []
     playerSequence = []
@@ -150,11 +149,11 @@ function reset(e) {
     // console.log(playerSequence);
 }
 
-
-
 //gameWon function when player wins last level of the game, they get congratulated...
-// function gameWon(){
-
-// }
+function gameWon(){
+    if(playerSequence.length == 26) {
+        info.innerHTML = ('Congrats! You Won!')
+    }
+}
 //********************************************* */
 
