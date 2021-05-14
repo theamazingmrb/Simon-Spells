@@ -10,6 +10,7 @@ Simon Spells puts a virtual, early-education twist on the game, Simon Says. Duri
 - JavaScript
 - CSS
 
+##### Play: [Simon Says](https://kaciekomoto.github.io/Simon-Spells/)
 
 ## Idea Inspiration
 The inspiration for this game was my 3-year-old niece, who likes to sit next to me as I work and imitate a taping-typing motion on the table. Thus, my goal was to create a simple and fun game to help early education learners learn their ABCs while familiarizing them with a computer keyboard layout.
@@ -29,7 +30,6 @@ The inspiration for this game was my 3-year-old niece, who likes to sit next to 
 - Player at any time can click the RESET button to clear all inputs
 
 
-
 ## Major Hurdles & Bugs
 Major Hurdles
 1. Timing the ```setTimeout()```
@@ -47,3 +47,6 @@ Bugs
     -  A version that goes through each key, rather than always starting the sequence from key A
     - A version where Simon selects keys at random
 4. A feature that allows the user to click the physical keyboard in addition to the virtual keyboard
+
+
+
