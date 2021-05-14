@@ -44,6 +44,6 @@ Bugs
 1. Improving UX/UI elements and Usability Testing
 2. Implementing Audio
 3. Creating two more versions:
-3a. A version that goes through each key, rather than always starting the sequence from key A
-3b. A version where Simon selects keys at random
+    -  A version that goes through each key, rather than always starting the sequence from key A
+    - A version where Simon selects keys at random
 4. A feature that allows the user to click the physical keyboard in addition to the virtual keyboard
