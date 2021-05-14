@@ -10,7 +10,7 @@ Simon Spells puts a virtual, early-education twist on the game, Simon Says. Duri
 - JavaScript
 - CSS
 
-##### Play: [Simon Says](https://kaciekomoto.github.io/Simon-Spells/)
+### Play: [SIMON SPELLS](https://kaciekomoto.github.io/Simon-Spells/)
 
 ## Idea Inspiration
 The inspiration for this game was my 3-year-old niece, who likes to sit next to me as I work and imitate a taping-typing motion on the table. Thus, my goal was to create a simple and fun game to help early education learners learn their ABCs while familiarizing them with a computer keyboard layout.
