@@ -1,22 +1,17 @@
-// //code from squad review
-// for (let i=0; i<10; i++){
-//     setTimeout(() => {console.log(i)}, 500 * i)
-// }
-
 // SIMON SPELLS
+
 //********** INSTRUCTIONS MODAL ****************/
-    // grab how to play div, grab close div, grab modal itself
     let howToPlayBtn = document.querySelector('#instructions-btn')
     let closeBtn = document.querySelector('#close-btn')
     let instructionsModal = document.querySelector('#instructions-modal')
-    //write function for opening modal and closing modal
+
     let openHowTo = () => {
         instructionsModal.style.display = 'block';
     }
     let closeHowTo = () => {
         instructionsModal.style.display = 'none';
     }
-    //add event listeners for div "btns"
+
     howToPlayBtn.addEventListener('click', openHowTo)
     closeBtn.addEventListener('click', closeHowTo)
 
@@ -24,49 +19,40 @@
 let startGame = document.querySelector('#start-btn')
 let resetGame = document.querySelector('#reset-btn')
 let levelTracker = document.querySelector('#level-number')
+let allKeys = document.querySelectorAll('.key')
 levelTracker.innerText = ("--")
 let info = document.querySelector('.whos-turn')
 info.innerHTML = (`Click START`)
+
 let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 let simonSequence = []
 let playerSequence= []
 let level = 1;
 let levelWon;
 let playerTurn = false;
-let on = true;
-let allKeys = document.querySelectorAll('.key')
 
-if (on == true) {
-    startGame.addEventListener("click", playGame)
-    resetGame.addEventListener("click", reset)
-    playerGoes()
-} else {
-    reset()
-}
-
+startGame.addEventListener("click", playGame)
+resetGame.addEventListener("click", reset)
+playerGoes()
 
 function playGame(e = null) {
     if (e) {
         e.preventDefault();
     }
-    //show what level player is on
     levelTracker.innerText = `${level}`;
-    //determine who's turn it is, and allow that person to go
     if (playerTurn == false) { 
         simonGoes();
     }
 }
 
-//simonGoes function copys part of alphabet array to simonSequence array. i.e for level 4 it will copy alphabet array from [0] to [3]
+
 function simonGoes() {
     playerTurn = false;
     simonSequence = alphabet.slice(0,level)
-    //light up key by taking simonSequence.length and light up each the key that i pertains to. i.e. when i = 0, light up A && when i=1, light up B
     setTimeout(() => {
         for (let i=0; i < simonSequence.length; i++) {
             info.innerHTML = (`Watch Simon!`)
             setTimeout(() => {
-                //selects key according to alphabet order since out of order in HTML
                 let specificKey = document.querySelector(`#${alphabet[i]}`)
                 specificKey.style.opacity = 0.1
                 setTimeout(() => {
@@ -74,86 +60,66 @@ function simonGoes() {
                     info.innerHTML = ('')
                 }, 800)
             }, 800 * i) 
-    }
-}, 1000)
-console.log(simonSequence);
+        }
+    }, 1000)
 }
 
-//playerGoes function listens to event of keys clicked, lights up keys clicked by toggling opacity, and pushes id of clicked keys into an array called playerSequence
+
 function playerGoes() {
     for(let i=0; i < 26; i++) {
         allKeys[i].addEventListener("click", (e) => {
-        e.preventDefault();
-        setTimeout(() => {
-            allKeys[i].style.opacity = 0.1
+            e.preventDefault();
             setTimeout(() => {
-                allKeys[i].style.opacity = 1
-            }, 500)
-        },10 * i)
-        let playerAnswer = e.target.id
-        playerSequence.push(playerAnswer)
-        console.log(playerSequence);
-        console.log(playerAnswer);
-        console.log(simonSequence);
-        console.log(level);
-        // console.log(allKeys);
-        if (playerSequence.length == level){
-            //need checkAnswer to wait for user to be done clicking...
-            let win = checkAnswer();
-            //when win is true, increase level
-            if (win) {
-                console.log('level won');
-                levelUp();
-                console.log(playerSequence);
-                playGame();
-                gameWon();
-            } else {
-                info.innerHTML = (`Sorry! Click RESET to try again!`)
-            }
-        }        
-    })
+                allKeys[i].style.opacity = 0.1
+                setTimeout(() => {
+                    allKeys[i].style.opacity = 1
+                }, 500)
+            },5 * i)
+            let playerAnswer = e.target.id
+            playerSequence.push(playerAnswer)
+            if (playerSequence.length == level){
+                let win = checkAnswer();
+                if (win) {
+                    if(playerSequence.length == 26) {
+                        info.innerHTML = ('Congrats! You Won!')
+                        setTimeout(() => {
+                            reset()
+                        }, 5000)
+                    } else {
+                        levelUp();
+                        playGame();
+                    }
+                } else {
+                    info.innerHTML = (`Sorry! Click RESET to try again!`)
+                }
+            }        
+        })
     }
 }
 
-//can i create an event listener to the keys that says if the amount of times keys clicked = level && playerSeq string = simonSeq string then level up?
-
-
-//checkAnswer function compares playerSequence to simonSequence. if matches up, player moves on to next level
 function checkAnswer(){
     if (playerSequence.toString() == simonSequence.toString()) {
         info.innerHTML = ('Correct!')
         return true
     } else {
-        // console.log('sorry, wrong answer! to try again, click the reset button');
         return false
     }
 }
-//function to levelUp
-function levelUp(){
-    level += 1
-    simonSequence = [];
-    playerSequence = [];
-    playerTurn = false;
-}
-
-//function to reset game when reset button clicked
-function reset(e) {
-    e.preventDefault();
+function reset(e = null) {
+    if (e) {
+        e.preventDefault();
+    }
     level = 1;
     levelTracker.innerText = ("--")
     info.innerHTML = ("Click START")
     playerTurn = false;
     simonSequence = []
     playerSequence = []
-    // console.log(simonSequence);
-    // console.log(playerSequence);
 }
 
-//gameWon function when player wins last level of the game, they get congratulated...
-function gameWon(){
-    if(playerSequence.length == 26) {
-        info.innerHTML = ('Congrats! You Won!')
-    }
+function levelUp(){
+    level += 1
+    simonSequence = [];
+    playerSequence = [];
+    playerTurn = false;
 }
-//********************************************* */
-
