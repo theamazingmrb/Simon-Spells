@@ -10,69 +10,28 @@
     <title>Simon-Spells</title>
 </head>
 <body>
-    <div class="screen">
-    <div class = "top-display">
-    <button id="instructions-btn">how to play</button>
-    <div class="level-display">
-        <div id="level-number"></div>
-        <div id="level-word">level</div>
-    </div> 
-    </div>
-    <div id="instructions-modal">
-        <div id="modal-textbox">
-            <h2>How to play Simon Spells:</h2>
-            <p>Hi! My name is Simon and I'm a computer. During my turn, watch which letters I light up and try your best to remember the sequence! Once I'm done, you'll have to click the buttons in the same sequence I did! </br> </br> Here's a tip: the level number will always correlate to the amount of letters in the sequence. Have fun!</p>
-            <div id="instructions-footer">
-                <button id="close-btn" class="modal-button" href="#">Close</button>
+    <main>
+        <h1 class="title --xl-large">Simon Spells</h1>
+        <h2>How to play Simon Spells:</h2>
+        <p>Hi! My name is Simon and I'm a computer. During my turn, watch which letters I light up and try your best to remember the sequence! Once I'm done, you'll have to click the buttons in the same sequence I did! </br> </br> Here's a tip: the level number will always correlate to the amount of letters in the sequence. Have fun!</p>
+        <div class="version-row">
+        <div id="one-key-modal">
+            <div id="one-key-textbox">
+                <p>This is instructions on how to play one key</p>
+                <div id="instructions-footer">
+                    <a class="lets-go-btn" href="one-key.html">Let's Play</a>
+                </div>
             </div>
         </div>
-    </div>
-
-
-    <h1>Simon Spells</h1>
-
-    <div class="reset-start-btns">
-        <button id="reset-btn" class="front-buttons">reset</button>
-        <button id="start-btn" class="front-buttons">start</button>
-    </div>
-    <div class="whos-turn"></div>
-</div>
-   
-    <div class="keyboard">
-        <div class= "row1">
-            <div class= "key" id="q">Q</div>
-            <div class= "key" id="w">W</div>
-            <div class= "key" id="e">E</div>
-            <div class= "key" id="r">R</div>
-            <div class= "key" id="t">T</div>
-            <div class= "key" id="y">Y</div>
-            <div class= "key" id="u">U</div>
-            <div class= "key" id="i">I</div>
-            <div class= "key" id="o">O</div>
-            <div class= "key" id="p">P</div>
+        <div id="alphabetical-modal">
+            <div id="alphabetical-textbox">
+                <p>This is instructions on how to play alphabetical version</p>
+                <div id="instructions-footer">
+                    <a class="lets-go-btn" href="alphabetical.html">Let's Play</a>
+                </div>
+            </div>
         </div>
-        <div class="row2">
-            <div class= "key" id="a">A</div>
-            <div class= "key" id="s">S</div>
-            <div class= "key" id="d">D</div>
-            <div class= "key" id="f">F</div>
-            <div class= "key" id="g">G</div>
-            <div class= "key" id="h">H</div>
-            <div class= "key" id="j">J</div>
-            <div class= "key" id="k">K</div>
-            <div class= "key" id="l">L</div>
         </div>
-        <div class="row3">
-            <div class= "key" id="z">Z</div>
-            <div class= "key" id="x">X</div>
-            <div class= "key" id="c">C</div>
-            <div class= "key" id="v">V</div>
-            <div class= "key" id="b">B</div>
-            <div class= "key" id="n">N</div>
-            <div class= "key" id="m">M</div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    </main>
 </body>
 </html>
