@@ -12,25 +12,29 @@
 <body>
     <main>
         <h1 class="title --xl-large">Simon Spells</h1>
-        <h2>How to play Simon Spells:</h2>
-        <p>Hi! My name is Simon and I'm a computer. During my turn, watch which letters I light up and try your best to remember the sequence! Once I'm done, you'll have to click the buttons in the same sequence I did! </br> </br> Here's a tip: the level number will always correlate to the amount of letters in the sequence. Have fun!</p>
+        <h4 id="simon-intro">Hi there! My name is Simon and I’m a computer. During my turn, watch which letters I light up in <span style="text-transform: uppercase; font-weight: 700; color:hsl(219, 47%, 60%)">blue</span> and try your best to remember the sequence! Then click the buttons in the same sequence I did!</h4>
+
         <div class="version-row">
-        <div id="one-key-modal">
-            <div id="one-key-textbox">
-                <p>This is instructions on how to play one key</p>
-                <div id="instructions-footer">
-                    <a class="lets-go-btn" href="one-key.html">Let's Play</a>
-                </div>
+        <a href="/one-key.html" class="btn--action" style="text-decoration: none;">
+        <div class ="version-boxes" id="one-key-box">
+            <div class ="version-textbox" id="one-key-textbox">
+                <h3>One Key</h3>
+                <h4 class="difficulty">Easy</h4>
+                <p>This level Simon follows the alphabet in order and the sequence length is only one key at a time.</p>
             </div>
         </div>
-        <div id="alphabetical-modal">
-            <div id="alphabetical-textbox">
-                <p>This is instructions on how to play alphabetical version</p>
-                <div id="instructions-footer">
-                    <a class="lets-go-btn" href="alphabetical.html">Let's Play</a>
+        </a>
+        <a href="/alphabetical.html" class="btn--action" style="    text-decoration: none;">
+            <div class ="version-boxes" id="alphabetical-box">
+                <div class ="version-textbox" id="alphabetical-textbox">
+                        <div>
+                            <h3>Alphabetical</h3>
+                            <h4 class="difficulty">Hard</h4>
+                            <p>This level follows the alphabet in order and the sequence length increases with each level.</p>
+                        </div>
                 </div>
             </div>
-        </div>
+        </a>
         </div>
     </main>
 </body>

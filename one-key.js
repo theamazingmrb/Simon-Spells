@@ -73,7 +73,7 @@ function playerGoes() {
                 allKeys[i].addEventListener("click", (e) => {
                     e.preventDefault();
                     setTimeout(() => {
-                        allKeys[i].style.backgroundColor = "#F0906D"
+                        allKeys[i].style.backgroundColor = "#84ADF6"
                         setTimeout(() => {
                             allKeys[i].style.backgroundColor = ""
                         }, 500)

@@ -67,12 +67,12 @@ function simonGoes() {
 //function for playersTurn
 function playerGoes() {
     noClick=false
-        for(let i=0; i < 26; i++) {
+        for(let i=0; i < 25; i++) {
             //event listener to change opacity of keys when clicked by player
                 allKeys[i].addEventListener("click", (e) => {
                     e.preventDefault();
                     setTimeout(() => {
-                        allKeys[i].style.backgroundColor = "#F0906D"
+                        allKeys[i].style.backgroundColor = "#84ADF6"
                         setTimeout(() => {
                             allKeys[i].style.backgroundColor = ""
                         }, 500)
