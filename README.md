@@ -42,7 +42,7 @@ Major Hurdles
 
 
 ## Version 2.0
-Post-presentations, I also showed my project to other Software Engineers and made iterations based on the feedback i collected. 
+Post-presentations, I also showed my project to other Software Engineers and made iterations based on the feedback collected. 
 
 <img src="img/SimonSpells_version2_home.png">
 <img src="img/SimonSpells_version2_gameboard.png">
