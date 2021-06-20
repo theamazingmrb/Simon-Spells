@@ -1,8 +1,9 @@
 # Simon Spells
-<img src="img/SimonSpells_version2_gameboard.png">
 
 ## About The Game
 Simon Spells puts a virtual, early-education twist on the game, Simon Says. During Simon's turn, a player must watch and try to memorize a sequence of keys played by Simon, or in this case, the computer. Then during their turn, they must click the keys in the same order as Simon did. In this version, Simon's growing sequence follows the same sequence as the alphabet and the level number correlates to the amount of letters in the sequence. For example, in level 3, Simon will play keys, A, B, then C. 
+
+<img src="img/SimonSpells_version2_gameboard.png">
 
 ### Languages Used
 - HTML
