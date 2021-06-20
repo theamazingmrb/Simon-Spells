@@ -12,26 +12,13 @@ let playerSequence= []
 let level = 1;
 let levelWon;
 let playerTurn = false;
-let noClick = true;
 
 startGame.addEventListener("click", playGame)
 resetGame.addEventListener("click", reset)
 playerGoes()
 
-//function for not being able to click
-// function clickability() {
-//     if(!noClick){     
-//         playerGoes()       
-//     } else {
-//         simonGoes()
-//         playerSequence=[]
-//      }  
-// }
-  
-
 //function attached to start game button event listener and to call simonGoes function
 function playGame(e = null) {
-    // clickability()
     //to account for when playGame is called without event listener in playerGoes function
     if (e) {
         e.preventDefault();
@@ -47,7 +34,7 @@ function simonGoes() {
     playerTurn = false;
     simonSequence = alphabet.slice(level-1,level)
     info.innerHTML = (`Watch Simon!`)
-        //reads which copys part of the alphabet according to the level (i.e. level 2 will pull 'a' and 'b')
+    //reads which copys part of the alphabet according to the level (i.e. level 2 will pull 'a' and 'b')
     setTimeout(() => {
         for (let i=0; i < simonSequence.length; i++) {
             console.log(simonSequence);
@@ -67,44 +54,43 @@ function simonGoes() {
 
 //function for playersTurn
 function playerGoes() {
-    // noClick=false
-        for(let i=0; i < 26; i++) {
-            //event listener to change opacity of keys when clicked by player
-                allKeys[i].addEventListener("click", (e) => {
-                    e.preventDefault();
-                    setTimeout(() => {
-                        allKeys[i].style.backgroundColor = "#84ADF6"
+    for(let i=0; i < 26; i++) {
+        //event listener to change opacity of keys when clicked by player
+        allKeys[i].addEventListener("click", (e) => {
+            e.preventDefault();
+            setTimeout(() => {
+                allKeys[i].style.backgroundColor = "#84ADF6"
+                setTimeout(() => {
+                    allKeys[i].style.backgroundColor = ""
+                }, 500)
+            },5 * i)
+            //pushes which keys where clicked and puts into PlayerSequence array
+            let playerAnswer = e.target.id
+            playerSequence.push(playerAnswer)
+            //checks Players answer with Simon's
+            if (playerSequence.length == 1){
+                //checks if player got answer right or wrong 
+                let win = checkAnswer();
+                //gives conditions if player gets it right
+                if (win) {
+                    //gives conditions if player gets it right and completes the entire alphabet
+                    if(playerSequence.length == 26) {
+                        info.innerHTML = ('Congrats! You Won!')
                         setTimeout(() => {
-                            allKeys[i].style.backgroundColor = ""
-                        }, 500)
-                    },5 * i)
-                    //pushes which keys where clicked and puts into PlayerSequence array
-                    let playerAnswer = e.target.id
-                    playerSequence.push(playerAnswer)
-                    //checks Players answer with Simon's
-                    if (playerSequence.length == 1){
-                        //checks if player got answer right or wrong 
-                        let win = checkAnswer();
-                        //gives conditions if player gets it right
-                        if (win) {
-                            //gives conditions if player gets it right and completes the entire alphabet
-                            if(playerSequence.length == 26) {
-                                info.innerHTML = ('Congrats! You Won!')
-                                setTimeout(() => {
-                                    reset()
-                                }, 5000)
-                            //gives conditions if player gets it right and has not yet completed the entire alphabet
-                            } else {
-                                levelUp();
-                                playGame();
-                            }
-                        //gives conditions if player gets it wrong
-                        } else {
-                            info.innerHTML = (`Sorry! Click RESET to try again!`)
-                        }
+                            reset()
+                        }, 5000)
+                    //gives conditions if player gets it right and has not yet completed the entire alphabet
+                    } else {
+                        levelUp();
+                        playGame();
                     }
-                })
-        }     
+                //gives conditions if player gets it wrong
+                } else {
+                    info.innerHTML = (`Sorry! Click RESET to try again!`)
+                }
+            }
+        })
+    }     
 }
 
 //compares player answer with Simon's by turning both arrays into Strings and then comparing
