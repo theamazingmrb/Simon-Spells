@@ -52,7 +52,7 @@ Post-presentations, I also showed my project to other Software Engineers and mad
     - Keyboard design and how the keys light up
     - Create an easier version that only lights up one-key at a time 
         - After having my niece try it out, I quickly realized that the original version was too difficult for her. Thus, I want to create versions with varying difficulties and make it more accessible to those of different ages and learning levels.
-2. Improve Media Responsiveness
+2. Improved Media Responsiveness
 
 
 ## Ideas for Future Modifications
