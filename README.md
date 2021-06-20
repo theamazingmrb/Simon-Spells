@@ -1,4 +1,5 @@
 # Simon Spells
+
 <img src="img/SimonSpells_version2_gameboard.png">
 
 ## About The Game
