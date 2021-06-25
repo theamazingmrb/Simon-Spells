@@ -1,3 +1,8 @@
+//A memory game where the computer/Simon will play a sequence of keys and then the user has to imitate. This version follows the alphabet in order, and the length of the sequence increases each level. 
+    //For example: 
+        //Level 1: Simon plays "A" --> Player has to click "A"
+        //Level 2: Simon plays "A" then "B" --> Player has to click "A" then "B"
+
 let startGame = document.querySelector('#start-btn')
 let resetGame = document.querySelector('#reset-btn')
 let levelTracker = document.querySelector('#level-number')

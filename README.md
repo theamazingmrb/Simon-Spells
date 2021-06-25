@@ -64,6 +64,6 @@ Post-presentations, I also showed my project to other Software Engineers and mad
     - Player can click keys during Simon's turn
 2. Continue improving UX/UI elements and Usability Testing
 3. Implement Audio of the ABC song
-4. Creat a version where Simon selects keys at random
+4. Create a version where Simon selects keys at random
 5. A feature that allows the user to click the physical keyboard in addition to the virtual keyboard
 6. Hints if the user gets stuck

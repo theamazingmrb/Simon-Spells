@@ -7,7 +7,7 @@ body {
 /* Simon Header and Game Description */
 h1{
     color: #3B3B3B;
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Comfortaa', sans-serif;
     font-size: 4rem;
     letter-spacing: 2px;
     text-align: center;
@@ -24,6 +24,8 @@ h1{
     line-height: 5vh;
     text-align: center;
     font-size: 21px;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 1rem;
 }
 
 /* Version Boxes */

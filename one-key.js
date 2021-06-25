@@ -1,3 +1,4 @@
+//
 let startGame = document.querySelector('#start-btn')
 let resetGame = document.querySelector('#reset-btn')
 let levelTracker = document.querySelector('#level-number')
